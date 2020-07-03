@@ -62,31 +62,31 @@ class _SideBarState extends State<SideBar>
           top: 0,
           bottom: 0,
           left: isSideBarOpenedAsync.data ? 0 : -screenWidth,
-          right: isSideBarOpenedAsync.data ? 0 : screenWidth - 45,
+          right: isSideBarOpenedAsync.data ? 0 : screenWidth - 40,
           child: Row(
             children: <Widget>[
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  color: const Color(0xFF262AAA),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  color: Colors.blue[900],
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        height: 100,
+                        height: 50,
                       ),
                       ListTile(
                         title: Text(
-                          "Prateek",
+                          "NURUL AZIZIE SYAHIRAH",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w800),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500),
                         ),
                         subtitle: Text(
-                          "www.techieblossom.com",
+                          "azizie.syahirah@ppdkk.edu.my",
                           style: TextStyle(
-                            color: Color(0xFF1BB5FD),
-                            fontSize: 18,
+                            color: Colors.blue[100],
+                            fontSize: 14,
                           ),
                         ),
                         leading: CircleAvatar(
@@ -94,15 +94,15 @@ class _SideBarState extends State<SideBar>
                             Icons.perm_identity,
                             color: Colors.white,
                           ),
-                          radius: 40,
+                          radius: 30,
                         ),
                       ),
                       Divider(
-                        height: 64,
+                        height: 40,
                         thickness: 0.5,
                         color: Colors.white.withOpacity(0.3),
-                        indent: 32,
-                        endIndent: 32,
+                        indent: 40,
+                        endIndent: 40,
                       ),
                       MenuItem(
                         icon: Icons.home,
@@ -115,7 +115,7 @@ class _SideBarState extends State<SideBar>
                       ),
                       MenuItem(
                         icon: Icons.person,
-                        title: "My Account",
+                        title: "Profil",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
@@ -123,32 +123,25 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.shopping_basket,
-                        title: "My Orders",
-                        onTap: () {
-                          onIconPressed();
-                          BlocProvider.of<NavigationBloc>(context)
-                              .add(NavigationEvents.MyOrdersClickedEvent);
-                        },
-                      ),
-                      MenuItem(
-                        icon: Icons.card_giftcard,
-                        title: "Wishlist",
+                        icon: Icons.exit_to_app,
+                        title: "Log Keluar",
                       ),
                       Divider(
-                        height: 64,
+                        height: 40,
                         thickness: 0.5,
                         color: Colors.white.withOpacity(0.3),
-                        indent: 32,
-                        endIndent: 32,
+                        indent: 40,
+                        endIndent: 40,
                       ),
                       MenuItem(
-                        icon: Icons.settings,
-                        title: "Settings",
+                        icon: Icons.phone,
+                        title: "Hubungi Kami",
                       ),
-                      MenuItem(
-                        icon: Icons.exit_to_app,
-                        title: "Logout",
+                      SizedBox(height: 200),
+                      Text(
+                        "Hakcipta Terpelihara 2020 © Pejabat Pendidikan Daerah Kota Kinabalu",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.blue[100]),
                       ),
                     ],
                   ),
@@ -164,14 +157,14 @@ class _SideBarState extends State<SideBar>
                     clipper: CustomMenuClipper(),
                     child: Container(
                       width: 35,
-                      height: 110,
-                      color: Color(0xFF262AAA),
+                      height: 90,
+                      color: Colors.blue[900],
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
                         progress: _animationController.view,
                         icon: AnimatedIcons.menu_close,
-                        color: Color(0xFF1BB5FD),
-                        size: 25,
+                        color: Colors.blue[100],
+                        size: 30,
                       ),
                     ),
                   ),

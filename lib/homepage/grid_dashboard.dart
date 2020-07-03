@@ -31,7 +31,7 @@ class GridDashboard extends StatelessWidget {
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
           crossAxisCount: 2,
           crossAxisSpacing: 30,
           mainAxisSpacing: 18,
