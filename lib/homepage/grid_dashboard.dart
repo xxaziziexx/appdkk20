@@ -1,8 +1,8 @@
+import 'package:appdkk/homepage/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class GridDashboard extends StatelessWidget {
   Items item1 = new Items(title: "Takwim", img: "images/date.png");
-
   Items item2 = new Items(
     title: "Tempahan Bilik Mesyuarat",
     img: "images/meeting.png",
@@ -14,14 +14,17 @@ class GridDashboard extends StatelessWidget {
   Items item4 = new Items(
     title: "Admin",
     img: "images/admin.png",
+    navigateTo: Home(),
   );
   Items item5 = new Items(
     title: "Dashboard Maklumat",
     img: "images/dashboard.png",
+    navigateTo: Home(),
   );
   Items item6 = new Items(
     title: "Kiosk Pdp Digital",
     img: "images/education.png",
+    navigateTo: Home(),
   );
 
   @override
@@ -35,40 +38,48 @@ class GridDashboard extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 30,
           mainAxisSpacing: 18,
-          children: myList.map((data) {
-            return Container(
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(0, 102, 204, 0.1),
-                  border: Border.all(
-                    color: Colors.white,
+          children: myList.map(
+            (data) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => data.navigateTo));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(0, 102, 204, 0.1),
+                      border: Border.all(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color.fromRGBO(0, 102, 204, 0.1),
+                            blurRadius: 20,
+                            offset: Offset(0, 10))
+                      ]),
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset(
+                        data.img,
+                        width: 42,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        data.title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
                   ),
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromRGBO(0, 102, 204, 0.1),
-                        blurRadius: 20,
-                        offset: Offset(0, 10))
-                  ]),
-              padding: EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    data.img,
-                    width: 42,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    data.title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-            );
-          }).toList()),
+                ),
+              );
+            },
+          ).toList()),
     );
   }
 }
@@ -76,5 +87,7 @@ class GridDashboard extends StatelessWidget {
 class Items {
   String title;
   String img;
-  Items({this.title, this.img});
+  Widget navigateTo;
+
+  Items({this.title, this.img, this.navigateTo});
 }
