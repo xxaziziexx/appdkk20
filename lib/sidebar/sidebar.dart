@@ -137,7 +137,11 @@ class _SideBarState extends State<SideBar>
                         icon: Icons.phone,
                         title: "Hubungi Kami",
                       ),
-                      SizedBox(height: 200),
+                      MenuItem(
+                        icon: Icons.info,
+                        title: "Mengenai Kami",
+                      ),
+                      SizedBox(height: 140),
                       Text(
                         "Hakcipta Terpelihara 2020 © Pejabat Pendidikan Daerah Kota Kinabalu",
                         textAlign: TextAlign.center,

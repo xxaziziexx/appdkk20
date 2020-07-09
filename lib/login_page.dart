@@ -1,7 +1,7 @@
 import 'package:appdkk/Animation/FadeAnimation.dart';
+import 'package:appdkk/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:appdkk/homepage/home_screen.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    padding: EdgeInsets.only(left: 25),
+                                    //padding: EdgeInsets.only(top: 20),
                                     decoration: BoxDecoration(
                                         border: Border.all(
                                           color: Colors.white,
@@ -79,6 +79,10 @@ class LoginPage extends StatelessWidget {
                                     child: TextField(
                                       decoration: InputDecoration(
                                           hintText: "Masukkan Emel",
+                                          contentPadding:
+                                              EdgeInsets.only(top: 16.0),
+                                          prefixIcon: Icon(Icons.email,
+                                              color: Colors.white),
                                           hintStyle:
                                               TextStyle(color: Colors.white70),
                                           border: InputBorder.none),
@@ -86,7 +90,6 @@ class LoginPage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 10.0),
                                   Container(
-                                    padding: EdgeInsets.only(left: 25),
                                     decoration: BoxDecoration(
                                         border: Border.all(
                                           color: Colors.white,
@@ -96,6 +99,10 @@ class LoginPage extends StatelessWidget {
                                     child: TextField(
                                       decoration: InputDecoration(
                                           hintText: "Masukkan Katalaluan",
+                                          contentPadding:
+                                              EdgeInsets.only(top: 16.0),
+                                          prefixIcon: Icon(Icons.vpn_key,
+                                              color: Colors.white),
                                           hintStyle:
                                               TextStyle(color: Colors.white70),
                                           border: InputBorder.none),
@@ -131,7 +138,7 @@ class LoginPage extends StatelessWidget {
                                   side: BorderSide(color: Colors.blue[900]),
                                 ),
                                 onPressed: () {
-                                  navigateToHomescreen(context);
+                                  navigateToSideBarLayout(context);
                                 },
                               )
                             ],
@@ -162,7 +169,8 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Future navigateToHomescreen(context) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+  Future navigateToSideBarLayout(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SideBarLayout()));
   }
 }

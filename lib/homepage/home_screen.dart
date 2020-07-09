@@ -1,23 +1,17 @@
-import 'package:appdkk/sidebar/sidebar.dart';
-import 'package:appdkk/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:appdkk/Animation/FadeAnimation.dart';
 import 'package:appdkk/homepage/grid_dashboard.dart';
 import 'package:appdkk/bloc/navigation_bloc/navigation_bloc.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatefulWidget with NavigationStates {
   @override
   HomeState createState() => new HomeState();
 }
 
-class HomeState extends State<Home> with NavigationStates {
+class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Pejabat Pendidikan Daerah Kota Kinabalu'),
-      ),
-      drawer: SideBar(),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(

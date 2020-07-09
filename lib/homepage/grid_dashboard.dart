@@ -1,15 +1,24 @@
 import 'package:appdkk/homepage/home_screen.dart';
+import 'package:appdkk/screen/dashboardexplorer.dart';
+import 'package:appdkk/screen/kioskpdpexplorer.dart';
+import 'package:appdkk/screen/meetingRoomExplorer.dart';
+import 'package:appdkk/screen/takwimexplorer.dart';
+import 'package:appdkk/screen/websiteppdexplorer.dart';
 import 'package:flutter/material.dart';
 
 class GridDashboard extends StatelessWidget {
-  Items item1 = new Items(title: "Takwim", img: "images/date.png");
+  Items item1 =
+      new Items(title: "Takwim", img: "images/date.png", navigateTo: Takwim());
+
   Items item2 = new Items(
     title: "Tempahan Bilik Mesyuarat",
     img: "images/meeting.png",
+    navigateTo: MeetingRoom(),
   );
   Items item3 = new Items(
     title: "Laman Web Rasmi",
     img: "images/website.gif",
+    navigateTo: Website(),
   );
   Items item4 = new Items(
     title: "Admin",
@@ -19,12 +28,12 @@ class GridDashboard extends StatelessWidget {
   Items item5 = new Items(
     title: "Dashboard Maklumat",
     img: "images/dashboard.png",
-    navigateTo: Home(),
+    navigateTo: Dashboard(),
   );
   Items item6 = new Items(
     title: "Kiosk Pdp Digital",
     img: "images/education.png",
-    navigateTo: Home(),
+    navigateTo: Kiosk(),
   );
 
   @override
