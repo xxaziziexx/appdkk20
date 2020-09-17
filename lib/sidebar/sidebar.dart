@@ -75,28 +75,26 @@ class _SideBarState extends State<SideBar>
                         height: 50,
                       ),
                       ListTile(
-                        title: Text(
-                          "NURUL AZIZIE SYAHIRAH",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        subtitle: Text(
-                          "azizie.syahirah@ppdkk.edu.my",
-                          style: TextStyle(
-                            color: Colors.blue[100],
-                            fontSize: 14,
+                          title: Text(
+                            "NURUL AZIZIE MINGGU",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
                           ),
-                        ),
-                        leading: CircleAvatar(
-                          child: Icon(
-                            Icons.perm_identity,
-                            color: Colors.white,
+                          subtitle: Text(
+                            "nurul.azizie@ppdkk.edu.my",
+                            style: TextStyle(
+                              color: Colors.blue[100],
+                              fontSize: 14,
+                            ),
                           ),
-                          radius: 30,
-                        ),
-                      ),
+                          leading: CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: AssetImage(
+                              "images/nurul.jpg",
+                            ),
+                          )),
                       Divider(
                         height: 40,
                         thickness: 0.5,
@@ -119,7 +117,7 @@ class _SideBarState extends State<SideBar>
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
-                              .add(NavigationEvents.MyAccountClickedEvent);
+                              .add(NavigationEvents.AboutUsClickedEvent);
                         },
                       ),
                       MenuItem(
@@ -136,10 +134,20 @@ class _SideBarState extends State<SideBar>
                       MenuItem(
                         icon: Icons.phone,
                         title: "Hubungi Kami",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.ContactUsClickedEvent);
+                        },
                       ),
                       MenuItem(
                         icon: Icons.info,
                         title: "Mengenai Kami",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.AboutUsClickedEvent);
+                        },
                       ),
                       SizedBox(height: 140),
                       Text(

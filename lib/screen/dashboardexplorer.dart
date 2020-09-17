@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -24,8 +23,10 @@ class _DashboardState extends State<Dashboard> {
               ),
             )),
         body: WebView(
-            initialUrl:
-                "https://datastudio.google.com/u/0/reporting/96b0d833-425a-4530-8d5d-a4b8185db712",
+            initialUrl: Uri.dataFromString(
+                    '<iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/96b0d833-425a-4530-8d5d-a4b8185db712/page/qgR" frameborder="0" style="border:0" allowfullscreen></iframe>',
+                    mimeType: 'text/html')
+                .toString(),
             onWebViewCreated: (WebViewController webViewController) {
               _controller.complete(webViewController);
             }));

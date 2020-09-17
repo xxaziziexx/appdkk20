@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:appdkk/homepage/home_screen.dart';
+import 'package:appdkk/screen/sidebar/aboutus_screen.dart';
+import 'package:appdkk/screen/sidebar/contactus_screen.dart';
 
 enum NavigationEvents {
   HomePageClickedEvent,
-  MyAccountClickedEvent,
-  MyOrdersClickedEvent,
+  AboutUsClickedEvent,
+  ContactUsClickedEvent,
 }
 
 abstract class NavigationStates {}
@@ -20,12 +22,12 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
         yield Home();
         break;
 
-      case NavigationEvents.MyAccountClickedEvent:
-        yield Home();
+      case NavigationEvents.AboutUsClickedEvent:
+        yield About();
         break;
 
-      case NavigationEvents.HomePageClickedEvent:
-        yield Home();
+      case NavigationEvents.ContactUsClickedEvent:
+        yield Contact();
         break;
     }
   }

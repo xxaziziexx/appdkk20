@@ -4,6 +4,8 @@ import 'package:appdkk/screen/kioskpdpexplorer.dart';
 import 'package:appdkk/screen/meetingRoomExplorer.dart';
 import 'package:appdkk/screen/takwimexplorer.dart';
 import 'package:appdkk/screen/websiteppdexplorer.dart';
+import 'package:appdkk/screen/adminexplorer.dart';
+import 'package:appdkk/screen/eKonsultasiexplorer.dart';
 import 'package:flutter/material.dart';
 
 class GridDashboard extends StatelessWidget {
@@ -16,30 +18,30 @@ class GridDashboard extends StatelessWidget {
     navigateTo: MeetingRoom(),
   );
   Items item3 = new Items(
-    title: "Laman Web Rasmi",
-    img: "images/website.gif",
-    navigateTo: Website(),
+    title: "e-Konsultasi OK9",
+    img: "images/e-konsultasi.png",
+    navigateTo: eKonsultasi(),
   );
   Items item4 = new Items(
-    title: "Admin",
-    img: "images/admin.png",
-    navigateTo: Home(),
-  );
-  Items item5 = new Items(
-    title: "Dashboard Maklumat",
-    img: "images/dashboard.png",
-    navigateTo: Dashboard(),
-  );
-  Items item6 = new Items(
     title: "Kiosk Pdp Digital",
     img: "images/education.png",
     navigateTo: Kiosk(),
   );
 
+  Items item5 = new Items(
+    title: "Laman Web Rasmi",
+    img: "images/website.gif",
+    navigateTo: Website(),
+  );
+  Items item6 = new Items(
+    title: "Admin",
+    img: "images/admin.png",
+    navigateTo: Admin(),
+  );
+
   @override
   Widget build(BuildContext context) {
     List<Items> myList = [item1, item2, item3, item4, item5, item6];
-    var color = 0xff453658;
     return Flexible(
       child: GridView.count(
           childAspectRatio: 1.0,

@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class Takwim extends StatefulWidget {
+class Admin extends StatefulWidget {
   @override
-  _TakwimState createState() => new _TakwimState();
+  _AdminState createState() => new _AdminState();
 }
 
-class _TakwimState extends State<Takwim> {
+class _AdminState extends State<Admin> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
@@ -18,14 +18,14 @@ class _TakwimState extends State<Takwim> {
         appBar: AppBar(
             backgroundColor: Colors.blue[900],
             title: Text(
-              "Takwim",
+              "Administrator",
               style: TextStyle(
                 fontSize: 17.0,
               ),
             )),
         body: WebView(
             initialUrl:
-                "https://calendar.google.com/calendar/u/0/htmlembed?src=ppdkk.edu.my_i0vkibhjfa18kdk7rd9erjprfc@group.calendar.google.com&ctz=Asia/Kuching&pli=1",
+                "https://www.ppdkk.edu.my/wp-login.php?redirect_to=https%3A%2F%2Fwww.ppdkk.edu.my%2Fwp-admin%2F&reauth=1",
             onWebViewCreated: (WebViewController webViewController) {
               _controller.complete(webViewController);
             }));

@@ -9,12 +9,14 @@ void main() => runApp(MaterialApp(
     ));
 
 class LoginPage extends StatelessWidget {
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        height: 20,
         decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topCenter, colors: [
           Colors.blue[900],
@@ -77,16 +79,24 @@ class LoginPage extends StatelessWidget {
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(30.0)),
-                                    child: TextField(
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.emailAddress,
+                                      autofocus: false,
+                                      maxLines: 1,
+                                      style: TextStyle(color: Colors.white),
                                       decoration: InputDecoration(
-                                          hintText: "Masukkan Emel",
-                                          contentPadding:
-                                              EdgeInsets.only(top: 16.0),
-                                          prefixIcon: Icon(Icons.email,
-                                              color: Colors.white),
-                                          hintStyle:
-                                              TextStyle(color: Colors.white70),
-                                          border: InputBorder.none),
+                                        hintText: "Masukkan Emel",
+                                        contentPadding:
+                                            EdgeInsets.only(top: 16.0),
+                                        prefixIcon: Icon(Icons.email,
+                                            color: Colors.white),
+                                        hintStyle:
+                                            TextStyle(color: Colors.white70),
+                                        border: InputBorder.none,
+                                      ),
+                                      validator: (value) => value.isEmpty
+                                          ? 'Password can\'t be empty'
+                                          : null,
                                     ),
                                   ),
                                   SizedBox(height: 10.0),
@@ -97,7 +107,11 @@ class LoginPage extends StatelessWidget {
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(30.0)),
-                                    child: TextField(
+                                    child: TextFormField(
+                                      obscureText: true,
+                                      autofocus: false,
+                                      maxLines: 1,
+                                      style: TextStyle(color: Colors.white),
                                       decoration: InputDecoration(
                                           hintText: "Masukkan Katalaluan",
                                           contentPadding:
@@ -138,7 +152,7 @@ class LoginPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(18.0),
                                   side: BorderSide(color: Colors.blue[900]),
                                 ),
-                                onPressed: () {
+                                onPressed: () async {
                                   navigateToSideBarLayout(context);
                                 },
                               )
